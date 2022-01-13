@@ -48,11 +48,15 @@ docker pull ubuntu
 docker run -it ubuntu bash 
 ```
 
-Uruchom polecenie w zadanym kontenerze
+* Uruchom polecenie w zadanym kontenerze
 ```shell
 docker exec -it d4359c9a8202 bash 
 ```
 
+* Uruchamianie pliku Dockerfile. 
+```shell
+docker build .
+```
 
 
 ```shell
