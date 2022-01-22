@@ -25,6 +25,10 @@ man ls
 man mkdir
 mkdir --help
 ```
+* Wyświetlenie ścieżki dostępu do bieżącego katalogu
+```shell
+pwd
+```
 
 ## Poruszanie się po drzewie katalogów 
 
