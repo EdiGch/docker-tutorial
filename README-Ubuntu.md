@@ -51,6 +51,7 @@ head -n 3 .bash_history | Kilka pierwszych linii pliku
 tail -n 3 .bash_history | Kilka ostatnich linii pliku
 cat .bash_history | Podejrzenie całego pliku
 less .bash_history | Podejrzenie całego pliku w aktywnym terminalu (q zamyka terminal)
+wc -l *.md | zliczanie lini kodu
 ```
 
 ### Tworzenie edytowanie pliku 
@@ -67,7 +68,7 @@ esc | wyjście z trybu wprowadzania
 :q | wyjdź
 :wq| Zapisz i wyjdź
 ```
-*Nano
+* Nano
 ```shell
 Łatwiejszy w obsłudze 
 ```
@@ -77,6 +78,58 @@ esc | wyjście z trybu wprowadzania
  rm qaz.txt
  rm *.txt | Usunięcie wszystkich plików o danym formacie 
  rm -r | Usunięcie katalogu zawierającego pliki 
+```
+
+### szukanie plików w folderze
+```shell
+find -name '*ME*' | znajdź szystkie pliki zawierające 'ME'
+find -name 7A8545A5802X* | = > odp: A8545A5802X-request-20210505-024601-001.txt
+find . -name F5043BD722BC*
+find . -name '2021-05-12*' -ls
+touch ZiEloNY.txt
+find -iname '*zielony*'
+find -iname '*zielony*' -ls
+find -iname '*.md' | znajdź pliki z rozszerzeniem .md
+ls | grep README => Wyświetl pliki z nazwa README
+ls | grep -v README => Wyświetl pliki z nazwa które NIE zawierają słowa README
+```
+
+* Przeszukiwanie plików tekstowych
+```shell
+grep plik README-Ubuntu.md | Wyszykanie w README-Ubuntu.md nazwy 'plik'
+grep plik *.md | Wyszykanie w plikach z końcówką .md nazwy 'plik'
+grep plik README-Ubuntu.md | wc -l => Zlicza ilość wystąpień słowa 'plik' w README-Ubuntu.md
+```
+
+* Sortowanie wyników 
+```shell
+
+```
+
+* Pipe - to polecenie w systemie Linux, które pozwala używać dwóch lub więcej poleceń
+```shell
+find -name '*ME*' | wc -l => Zlicza ilość wystopień dopasowanych wyników z wyszukania
+```
+
+* Uruchomienei w konsoli pliku 
+```shell
+touch index.php
+nano index.php
+echo "Wszystko działa";
+php index.php
+```
+* Brak bajtu wykonywalności ? Jak to sprawdzić.
+```shell
+ls -l skrypt.sh
+chmod +x skrypt.sh
+```
+* Uruchomienei w konsoli pliku 
+```shell
+touch skrypt.sh
+nano skrypt.sh
+#!/bin/bash
+echo "Wszystko działa"
+./skrypt.sh
 ```
 
 * Informacja o ilości zajętego miejsca w danym katalogu
@@ -105,16 +158,6 @@ sudo systemctl disable nginx.service
 ```shell
 sudo gedit /etc/hosts
 sudo pico /etc/hosts
-```
-
-* Szukanie plików 
-```shell
-find -name 7A8545A5802X* = > odp: A8545A5802X-request-20210505-024601-001.txt
-/application/web/files/couriers/geodis/imports/2021-05 $ 
-find . -name F5043BD722BC*
-find . -name '2021-05-12*' -ls
-cat 7A8545A5802X-request-20210505-024601-001.txt
-
 ```
 
 * Przełączenie między wersjami php
