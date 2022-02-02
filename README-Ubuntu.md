@@ -149,13 +149,22 @@ df -h
 * Przy pracy z zajętymi portami 
 
 ```shell
+sudo systemctl status apache2
 sudo systemctl stop apache2.service
+
 sudo ps aux | grep apache
 sudo ps aux | grep http
 sudo netstat -atnp
+sudo netstat -ltnp | grep :80
+sudo ss -4 -tlnp
+sudo ss -4 -tlnp | grep 80
+
+
 sudo systemctl stop httpd
 sudo systemctl stop nginx.service
 sudo systemctl disable nginx.service
+
+
 ```
 
 
