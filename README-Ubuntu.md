@@ -173,3 +173,8 @@ sudo update-alternatives --config php
 1 Wyszukaj aktualny plik php.ini
 php -i | grep 'Configuration File'
 ```
+
+* Rollback apt purge
+```shell
+sudo apt-get install `grep Remove /var/log/apt/history.log | tail -1 | sed -e 's|Remove: ||g' -e 's|([^)]*)||g' -e 's|:[^ ]* ||g' -e 's|,||g'`
+```
