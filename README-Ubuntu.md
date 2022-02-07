@@ -149,6 +149,9 @@ df -h
 * Przy pracy z zajętymi portami 
 
 ```shell
+sudo lsof -i :5432
+sudo kill 
+
 sudo systemctl status apache2
 sudo systemctl stop apache2.service
 
