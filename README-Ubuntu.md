@@ -166,8 +166,11 @@ sudo ss -4 -tlnp | grep 80
 sudo systemctl stop httpd
 sudo systemctl stop nginx.service
 sudo systemctl disable nginx.service
+```
 
-
+* Sprawdzanie otwartych portów
+```shell
+sudo netstat -plunt
 ```
 
 
