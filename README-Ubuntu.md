@@ -167,6 +167,11 @@ sudo systemctl stop httpd
 sudo systemctl stop nginx.service
 sudo systemctl disable nginx.service
 ```
+* Uzyskanie informacji o rekordach DNS dla domeny lub adresu IP.
+```shell
+nslookup localhost
+nslookup google.com
+```
 
 * Sprawdzanie otwartych portów
 ```shell
