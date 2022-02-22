@@ -8,6 +8,23 @@ docker container ls -a
 docker ps -a
 ```
 
+## Monitorowanie procesu CLI
+
+* Wyświetl uruchomione procesy wewnątrz działającego kontenera 
+```shell
+docker top 15dc2ff5f0f3
+```
+
+* Docker Inspect zawiera szczegółowe informacje o konfiguracji kontenera w trakcie jego uruchomienia
+```shell
+docker inspect 2asdasdasd (obraz)
+```
+
+* Wyświetl transmisję na żywo statystyk wykorzystania zasobów kontenerów
+```shell
+docker stats 2asdasdasd (obraz)
+```
+
 * Zatrzymaj jeden lub więcej działających kontenerów
 
 ```shell
