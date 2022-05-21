@@ -53,6 +53,11 @@ docker exec
 docker image ls
 ```
 
+* Usuń wszystkie obrazy
+```shell
+docker rmi $(docker images -a -q)
+```
+
 * Usuń obraz 
 ```shell
 docker rmi nginx
@@ -88,6 +93,37 @@ docker exec -it d4359c9a8202 bash
 * Uruchamianie pliku Dockerfile. 
 ```shell
 docker build .
+```
+Wyświetl listę mapowań portów lub konkretnego mapowania dla kontenera
+```shell
+docker port CONTAINER
+docker run -d -p 80:80 --name webhost nginx
+docker inspect fe60234f8875 --format '{{ .NetworkSettings.IPAddress }}'
+```
+
+Pokaż sieci
+```shell
+docker network ls
+```
+
+Zbadaj sieć
+```shell
+docker network inspect
+```
+
+Tworzenie nowej sieci wirtualnej
+```shell
+docker network create --driver
+
+docker network create my_custom_app_net
+
+docker container run -d --name new_nginx --network my_custom_app_net nginx
+
+docker network inspect my_custom_app_net
+
+docker network connect (id network) (id container nginx)
+docker network connect efdbebcdc2c7 fe60234f8875
+docker network disconnect efdbebcdc2c7 fe60234f8875
 ```
 
 
